@@ -1,36 +1,46 @@
-// Requiring necessary npm packages
-const express = require("express");
-const session = require("express-session");
-// Requiring passport as we've configured it
-const passport = require("./config/passport");
+// *********************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+// *********************************************************************************
 
-// Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 8080;
-const db = require("./models");
+/*
+ *  STEPS TO SEQUELIZE THE STAR WARS APP.
+ *  1. Install the sequelize and mysql2 npm packages.
+ *  2. Delete the orm from config. In your app folder, create a model folder
+ *     with a character.js file in the model
+ *  3. In character.js, model out the character table, as detailed
+ *     in the schema.sql file located in the root of this project directory.
+ *  4. Remove all references to the old orm file,
+ *     and replace it with character.js
+ *  5. Use Sequelize methods in place of the orm calls
+ *     to retrieve and insert data.
+ *  6. Update connection.js to use sequelize instead of the mysql package.
+ *
+ * -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ */
 
-// Creating express app and configuring middleware needed for authentication
-const app = express();
+// Dependencies
+// =============================================================
+var express = require("express");
+
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = process.env.PORT || 8080;
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
-app.use(passport.initialize());
-app.use(passport.session());
 
-// Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+// Static directory to be served
+app.use(express.static("app/public"));
 
-// Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
+// Routes
+// =============================================================
+require("./app/routes/api-routes.js")(app);
+
+// Here we introduce HTML routing to serve different HTML files
+require("./app/routes/html-routes.js")(app);
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
 });
