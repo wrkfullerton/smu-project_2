@@ -1,68 +1,40 @@
-<!DOCTYPE html>
-<html lang="en-us">
+// Code here handles what happens when a user submits a new shoe on the form.
+// Effectively it takes the form inputs then sends it to the server to save in the DB.
 
-<head>
-  <meta charset="UTF-8">
-  <title>Star Wars - Express</title>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-</head>
-
-<body>
-
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Star Wars Express</h1>
-      <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
-      <hr>
-      <a href="/add" class="btn btn-danger btn-lg">
-        <span class="fa fa-plus"></span> Add New Character</a>
-      <a href="/all" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> All Characters</a>
-    </div>
-    <div class="row">
-
-      <div class="col-lg-12">
-
-        <div class="card mb-4">
-          <div class="card-header">
-            Character Search
-          </div>
-          <div class="card-body">
-            <input type="text" id="character-search" class="form-control">
-            <br>
-            <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="search-btn">
-                <span class="fa fa-search"></span> Search Your Feelings. You know it is true.</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-
-      <div class="col-lg-12">
-
-        <div class="card">
-          <div class="card-header">
-            Character Details
-          </div>
-          <div class="card-body" id="well-section">
-            <!-- Content will go in here -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Custom Script -->
-  <script src="js/view.js" type="text/javascript"></script>
-
-</body>
-
-</html>
+// when user clicks add-btn
+$("#add-btn").on("click", function(event) {
+    event.preventDefault();
+  
+    // make a newShoe obj
+    var newShoe = {
+      // role from brand input
+      brand: $("#brand").val().trim(),
+        // name from name input
+      name: $("#name").val().trim(),
+      // age from size input
+      size: $("#size").val().trim(),
+      // points from color input
+      color: $("#color").val().trim()
+      // points from color input
+      condition: $("#condition").val().trim()
+    };
+  
+    // send an AJAX POST-request with jQuery
+    $.post("/api/new", newShoe)
+      // on success, run this callback
+      .then(function(data) {
+        // log the data we found
+        console.log(data);
+        // tell the user we're adding a shoe with an alert window
+        alert("Adding shoe...");
+      });
+  
+    // empty each input box by replacing the value with an empty string
+    $("#brand").val("");
+    $("#name").val("");
+    $("#size").val("");
+    $("#color").val("");
+    $("#condition").val("");
+  
+  });
+  
