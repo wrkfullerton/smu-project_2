@@ -1,0 +1,15 @@
+DROP DATABASE IF EXISTS shoes_db; 
+
+CREATE DATABASE shoes_db;
+
+USE shoes_db;
+
+CREATE TABLE shoes (
+    id INT NOT NULL AUTO_INCREMENT, 
+    Brand VARCHAR(255) NOT NULL, 
+    Name VARCHAR(255) NOT NULL, 
+    Size INT NOT NULL,
+    Color VARCHAR(255) NOT NULL,
+    Condition_shoe VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
