@@ -1,22 +1,20 @@
 {
-  "name": "shoemarketplace",
+  "name": "shoe-marketplace",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "dependencies": {},
-  "devDependencies": {},
   "scripts": {
-    "test": "mocha",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wrkfullerton/smu-project_2.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wrkfullerton/smu-project_2/issues"
-  },
-  "homepage": "https://github.com/wrkfullerton/smu-project_2#readme"
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql2": "^1.6.4",
+    "npm": "^6.4.1",
+    "sequelize": "^4.41.2"
+  }
 }
