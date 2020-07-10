@@ -14,7 +14,7 @@ $("#add-btn").on("click", function(event) {
       // age from size input
       size: $("#size").val().trim(),
       // points from color input
-      color: $("#color").val().trim()
+      color: $("#color").val().trim(),
       // points from color input
       condition: $("#condition").val().trim()
     };

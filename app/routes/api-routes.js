@@ -4,7 +4,7 @@
 
 // Dependencies
 // =============================================================
-var shoe = require("../models/shoe.js");
+var Shoe = require("../models/shoe.js");
 
 // Routes
 // =============================================================
@@ -14,7 +14,7 @@ module.exports = function(app) {
     if (req.params.shoes) {
       // Display the JSON for ONLY that shoe.
       // (Note how we're using the ORM here to run our searches)
-      shoe.findOne({
+      Shoe.findOne({
         where: {
           routeName: req.params.shoes
         }
@@ -22,7 +22,7 @@ module.exports = function(app) {
         return res.json(result);
       });
     } else {
-      shoe.findAll().then(function(result) {
+      Shoe.findAll().then(function(result) {
         return res.json(result);
       });
     }
@@ -40,7 +40,7 @@ module.exports = function(app) {
     var routeName = shoe.name.replace(/\s+/g, "").toLowerCase();
 
     // Then add the shoe to the database using sequelize
-    shoe.create({
+    Shoe.create({
       routeName: routeName,
       brand: shoe.brand,
       name: shoe.name,
