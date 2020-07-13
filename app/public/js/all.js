@@ -20,11 +20,14 @@ $.get("/api", function(data) {
       // make the brand an h2,
       $("#shoe-well-" + i).append("<h2>Brand: " + data[i].brand + "</h2>");
       // the name an h3,
-      $("#shoe-well-" + i).append("<h3>Name: " + data[i].name + "</h4>");
+      $("#shoe-well-" + i).append("<h3>Name: " + data[i].name + "</h3>");
       // the size an h3,
-      $("#shoe-well-" + i).append("<h3>Size: " + data[i].size + "</h4>");
+      $("#shoe-well-" + i).append("<h4>Size: " + data[i].size + "</h4>");
       // and the color an h3.
-      $("#shoe-well-" + i).append("<h3>Color: " + data[i].color + "</h4>");
+      $("#shoe-well-" + i).append("<h4>Color: " + data[i].color + "</h4>");
+      // and the condition an h3.
+      $("#shoe-well-" + i).append("<h4>Condition: " + data[i].condition + "</h4>");
+      $("#shoe-well-" + i).append("<hr>");
+      
     }
   });
-  
