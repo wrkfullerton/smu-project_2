@@ -31,11 +31,11 @@ $("#search-btn").on("click", function() {
         // the name
         $("#well-section").append("<h3>Name: " + data.name + "</h3>");
         // the size
-        $("#well-section").append("<h3>Size: " + data.size + "</h3>");
+        $("#well-section").append("<h4>Size: " + data.size + "</h4>");
         // and the color
-        $("#well-section").append("<h3>Condition: " + data.color + "</h3>");
+        $("#well-section").append("<h4>Color: " + data.color + "</h4>");
         // and the condition
-        $("#well-section").append("<h3>Condition: " + data.condition + "</h3>");
+        $("#well-section").append("<h4>Condition: " + data.condition + "</h4>");
       }
     });
   });
