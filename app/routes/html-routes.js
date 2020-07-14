@@ -30,5 +30,9 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
   });
 
+  // route loading to the bid.html page
+  app.get("/bid", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/bid.html"));
+  });
 };
 
