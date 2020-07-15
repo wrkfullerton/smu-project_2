@@ -38,4 +38,5 @@ function timeKeeper() {
 // when user submits their bid amount
 $("#submit-btn").click(function () {
     $('.current-bid').append($(".form-control").val());
+    alert('Your bid was submitted!');
 });
