@@ -3,6 +3,7 @@
 // URL parameter. Our server then performs the search to grab that shoe from the Database.
 
 // when user hits the search-btn
+
 $("#search-btn").on("click", function () {
   // save the shoe they typed into the shoe-search input
   var searchedShoe = $("#shoe-search")
