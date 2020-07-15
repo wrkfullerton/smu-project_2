@@ -10,6 +10,7 @@ $.get("/api", function (data) {
     var wellSection = $("<div>");
     // add a class to this div: 'well'
     wellSection.addClass("well");
+
     // add an id to the well to mark which well it is
     wellSection.attr("id", "shoe-well-" + i);
     // append the well to the well section
@@ -26,19 +27,22 @@ $.get("/api", function (data) {
     // and the color an h3.
     $("#shoe-well-" + i).append("<h3>Color: " + data[i].color + "</h4>");
 
+    // $("#shoe-well-" + i).append("<input>" + bidButton[i].bidButton + "</input>");
+
     // Button if user wants to place bid on item 
     $(document).ready(function () {
       var bidButton = $("<a>").click(function () {
         // once clicked, this will direct user to bid page. 
         $(location).attr('href', 'bid.html');
       });
-      bidButton.addClass("btn btn-danger btn-lg");
-      bidButton.append(document.createTextNode('Would you like to place a bid on this item?'));
+      bidButton.addClass("btn btn-primary btn-md");
+      bidButton.css("color", "white");
 
+      bidButton.append(document.createTextNode('Bid?'));
       $("#well-section").append(bidButton),
         $("#well-section" + i).append("<p>Bid" + bidButton + "</p>");
 
     });
-
+    $("#shoe-well-" + i).prepend("<hr>");
   };
 });
