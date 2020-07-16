@@ -1,14 +1,35 @@
+// {
+//   "development": {
+//     "username": "mdluz45frx9odnpem",
+//     "password": "wbfie7cyeinklumc",
+//     "database": "p03dyydrl3zi9wqw",
+//     "host": "127.0.0.1",
+//     "dialect": "mysql"
+//   },
+//   "test": {
+//     "username": "mdluz45frx9odnpe",
+//     "password": "p03dyydrl3zi9wqw",
+//     "database": "shoe_test",
+//     "host": "127.0.0.1",
+//     "dialect": "mysql"
+//   },
+//   "production": {
+//     "use_env_variable": "mysql://mdluz45frx9odnpe:wbfie7cyeinklumc@x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p03dyydrl3zi9wqw",
+//     "dialect": "mysql"
+//   }
+// }
+
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "shoe_db",
+    "password": "WRKFw4t3rm4rk7",
+    "database": "shoes_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "WRKFw4t3rm4rk7",
     "database": "shoe_test",
     "host": "127.0.0.1",
     "dialect": "mysql"

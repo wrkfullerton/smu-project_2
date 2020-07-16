@@ -4,9 +4,46 @@
 // when user clicks add-btn
 $("#add-btn").on("click", function(event) {
     event.preventDefault();
+    
+    function FileUpload() {
+
+      // const [file, setFile] = useState(''); // storing the uploaded file
+      // storing the recived file from backend
+      const [data, getFile] = useState({ name: "", path: "" });
+      const [progress, setProgess] = useState(0); // progess bar
+      const el = useRef(); // accesing input element
   
+      const handleChange = (e) => {
+          setProgess(0)
+          const file = e.target.files[0]; // accessing file
+          console.log(file);
+          setFile(file); // storing file
+      }
+  
+      const uploadFile = () => {
+          const formData = new FormData();
+          formData.append('file', file); // appending file
+          axios.post('http://localhost:4500/upload', formData, {
+              onUploadProgress: (ProgressEvent) => {
+                  let progress = Math.round(
+                  ProgressEvent.loaded / ProgressEvent.total * 100) + '%';
+                  setProgess(progress);
+              }
+          }).then(res => {
+              console.log(res);
+              getFile({ name: res.data.name,
+                       path: 'http://localhost:4500' + res.data.path
+                     })
+          }).catch(err => console.log(err))}
+
+      ;
+  }
+  
+  export default FileUpload;
+
     // make a newShoe obj
     var newShoe = {
+
       // role from brand input
       brand: $("#brand").val().trim(),
         // name from name input
