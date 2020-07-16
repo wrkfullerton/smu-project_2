@@ -1,20 +1,20 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "WRKFw4t3rm4rk7",
     "database": "shoe_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "WRKFw4t3rm4rk7",
     "database": "shoe_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "use_env_variable": "mysql://mdluz45frx9odnpe:wbfie7cyeinklumc@x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p03dyydrl3zi9wqw",
     "dialect": "mysql"
   }
 }
