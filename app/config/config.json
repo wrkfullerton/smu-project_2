@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": "WRKFw4t3rm4rk7",
-    "database": "shoe_db",
-    "host": "127.0.0.1",
+    "username": "mdluz45frx9odnpem",
+    "password": "wbfie7cyeinklumc",
+    "database": "p03dyydrl3zi9wqw",
+    "host": "x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "WRKFw4t3rm4rk7",
-    "database": "shoe_test",
-    "host": "127.0.0.1",
+    "username": "mdluz45frx9odnpe",
+    "password": "wbfie7cyeinklumc",
+    "database": "p03dyydrl3zi9wqw",
+    "host": "x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
