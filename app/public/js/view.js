@@ -6,7 +6,7 @@
 
 $("#search-btn").on("click", function () {
   // save the shoe they typed into the shoe-search input
-  var searchedShoe = $("#shoe-search")
+  var searchedShoe = $("#Shoe-search")
     .val()
     .trim();
 
